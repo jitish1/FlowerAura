@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { View, Text, ActivityIndicator, ScrollView, CheckBox, YellowBox } from "react-native";
+import { View, Text, ActivityIndicator, ScrollView, CheckBox } from "react-native";
 import { fetchAPI } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
-YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated']);
 import ImageSlider from 'react-native-image-slider';
 import StarRating from 'react-native-star-rating';
 import styles from '../config/Styles';
@@ -48,7 +47,7 @@ class Listing extends Component {
             )
         } else {
 
-            //...............Destructing Props Data ..............//
+            //...............Destructuring Props Data ..............//
             const { images, title, price, reviewRating, attributes, contains, description } = this.props._data.result.product;
 
             attributes1 = attributes[3].options[6].name + '@ Rs' + attributes[3].options[6].price.split('.')[0].trim();
